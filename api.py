@@ -23,8 +23,6 @@ creality_printer_operations = Namespace('creality_printer_operations', descripti
 info_parser = reqparse.RequestParser()
 info_parser.add_argument('IP', type=str, required=True, help='Endereço IP da máquina')
 
-delete_machine = reqparse.RequestParser()
-info_parser.add_argument('Apelido', type=str, required=True, help='Apelido da maquina a deletar')
 
 device_registration_parser = reqparse.RequestParser()
 device_registration_parser.add_argument('Machine_Name', type=str, required=True, help='Nome da máquina')
@@ -136,7 +134,7 @@ class GetPrinters(Resource):
 @general_operations.route('/remove_printer_by_nickname')
 class RemovePrinterByNickname(Resource):
     @general_operations.doc(responses={200: 'Máquina removida com sucesso', 400: 'Falhou'})
-    @elegoo_printer_operations.expect(delete_machine)
+    @elegoo_printer_operations.expect()
     def post(self):
         nickname = request.args.get('Apelido')  # Obtém o apelido via query string
         if not nickname:
