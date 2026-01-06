@@ -19,7 +19,7 @@ A melhor forma de manter a integração atualizada.
 
 1.  No seu Home Assistant, abra o **HACS**.
 2.  Clique nos **três pontinhos** no canto superior direito e selecione **Custom repositories** (Repositórios personalizados).
-3.  No campo **Repository**, cole a URL: `https://github.com/gabrielbolzani/3dprintes_API`
+3.  No campo **Repository**, cole a URL: `https://github.com/gabrielbolzani/Elegoo_Saturn_3_ultra_HomeAssistant_Integration`
 4.  No campo **Category**, selecione **Integration**.
 5.  Clique em **ADD**.
 6.  Agora, procure por **Elegoo Saturn 3 Ultra** na lista do HACS e clique em **Download**.
