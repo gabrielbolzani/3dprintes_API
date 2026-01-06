@@ -1,9 +1,12 @@
 {
-  "domain": "elegoo_saturn",
-  "name": "Elegoo Saturn 3 Ultra",
-  "documentation": "https://github.com/gabrielbolzani/3dprintes_API",
-  "dependencies": [],
-  "codeowners": ["@gabrielbolzani"],
-  "iot_class": "local_polling",
-  "version": "1.0.0"
+    "domain": "elegoo_saturn",
+    "name": "Elegoo Saturn 3 Ultra",
+    "documentation": "https://github.com/gabrielbolzani/3dprintes_API",
+    "issue_tracker": "https://github.com/gabrielbolzani/3dprintes_API/issues",
+    "dependencies": [],
+    "codeowners": [
+        "@gabrielbolzani"
+    ],
+    "iot_class": "local_polling",
+    "version": "1.0.0"
 }
