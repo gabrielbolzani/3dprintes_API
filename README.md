@@ -1,33 +1,45 @@
-# Elegoo Saturn Home Assistant Integration
+# Elegoo Saturn 3 Ultra - Home Assistant Integration
 
-Este repositório contém uma integração customizada para o **Home Assistant** que permite monitorar impressoras **Elegoo Saturn 3 Ultra** diretamente no seu dashboard.
+Integração nativa para o **Home Assistant** que permite monitorar e controlar sua impressora de resina **Elegoo Saturn 3 Ultra** diretamente no seu dashboard.
 
 ## 🚀 Funcionalidades
 
-- **Configuração Simples**: Adicione sua impressora via interface do Home Assistant (Config Flow) usando apenas Nome e IP.
 - **Monitoramento em Tempo Real**:
   - Status da máquina (Idle, Printing, Paused, Error).
-  - Progresso da impressão em porcentagem.
-  - Camada atual e Total de camadas.
-  - Nome do arquivo em impressão.
-  - Tempo restante estimado.
-- **Protocolo Direto**: Comunicação via UDP (porta 3000) sem necessidade de APIs intermediárias.
+  - Progresso da impressão e camada atual.
+  - Nome do arquivo e tempo restante.
+  - Previsão de término (Data/Hora).
+- **Controles Remotos**: Botoões de **Pausar**, **Retomar** e **Parar** impressão.
+- **Configuração via Interface**: Nada de YAML, configure tudo pela interface do HA.
 
-## 🛠️ Como Instalar
+## 🛠️ Instalação Passo a Passo
 
-1.  Baixe a pasta `custom_components/elegoo_saturn`.
-2.  Copie a pasta para dentro do diretório `custom_components` da sua instalação do Home Assistant.
-3.  Reinicie o Home Assistant.
-4.  Vá em **Configurações > Dispositivos e Serviços > Adicionar Integração**.
-5.  Pesquise por **Elegoo Saturn 3 Ultra**.
-6.  Configure o nome e o IP da sua impressora.
+### 1. Pelo HACS (Recomendado)
+A melhor forma de manter a integração atualizada.
 
-## 📁 Estrutura do Projeto
+1.  No seu Home Assistant, abra o **HACS**.
+2.  Clique nos **três pontinhos** no canto superior direito e selecione **Custom repositories** (Repositórios personalizados).
+3.  No campo **Repository**, cole a URL: `https://github.com/gabrielbolzani/3dprintes_API`
+4.  No campo **Category**, selecione **Integration**.
+5.  Clique em **ADD**.
+6.  Agora, procure por **Elegoo Saturn 3 Ultra** na lista do HACS e clique em **Download**.
+7.  **Reinicie o Home Assistant**.
 
-- `custom_components/elegoo_saturn/`: Contém todo o código da integração.
-  - `client.py`: Interface de comunicação com a impressora.
-  - `sensor.py`: Definição de sensores para o HA.
-  - `config_flow.py`: Lógica de configuração via interface.
+---
+
+## ⚙️ Configuração
+
+Após reiniciar o Home Assistant, siga estes passos para adicionar sua impressora:
+
+1.  Vá em **Configurações** > **Dispositivos e Serviços**.
+2.  Clique no botão **+ ADICIONAR INTEGRAÇÃO** no canto inferior direito.
+3.  Pesquise por **Elegoo Saturn 3 Ultra** e selecione-a.
+4.  Um formulário aparecerá solicitando:
+    - **Nome da Máquina**: Como você quer que ela apareça no HA (ex: Saturn 3 Ultra Oficina).
+    - **Endereço IP**: O IP atual da sua impressora na sua rede local.
+5.  Clique em **Enviar**.
+
+**Dica**: Recomenda-se fixar o IP da impressora nas configurações do seu roteador (DHCP Estático) para evitar que a integração perca a conexão caso o IP mude.
 
 ---
 *Desenvolvido por Gabriel Bolzani*
