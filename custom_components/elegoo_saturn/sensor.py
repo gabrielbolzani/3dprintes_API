@@ -47,7 +47,8 @@ class ElegooProgressSensor(ElegooSensorBase):
     """Sensor for print progress."""
     _attr_name = "Progresso"
     _attr_native_unit_of_measurement = "%"
-    _attr_unique_id = "progress"
+    _attr_icon = "mdi:percent"
+    _attr_state_class = "measurement"
 
     @property
     def native_value(self):
@@ -60,12 +61,14 @@ class ElegooProgressSensor(ElegooSensorBase):
 class ElegooLayerSensor(ElegooSensorBase):
     """Sensor for current layer."""
     _attr_name = "Camada Atual"
-    _attr_unique_id = "layer"
+    _attr_icon = "mdi:layers"
 
     @property
     def native_value(self):
         curr = self.coordinator.data.get("current_layer")
         total = self.coordinator.data.get("total_layers")
+        if total == 0:
+            return "N/A"
         return f"{curr}/{total}"
 
     @property
@@ -75,11 +78,12 @@ class ElegooLayerSensor(ElegooSensorBase):
 class ElegooFilenameSensor(ElegooSensorBase):
     """Sensor for printing file name."""
     _attr_name = "Arquivo"
-    _attr_unique_id = "filename"
+    _attr_icon = "mdi:file-3d"
 
     @property
     def native_value(self):
-        return self.coordinator.data.get("filename")
+        val = self.coordinator.data.get("filename")
+        return val if val else "Nenhum"
 
     @property
     def unique_id(self):
@@ -88,7 +92,7 @@ class ElegooFilenameSensor(ElegooSensorBase):
 class ElegooTimeSensor(ElegooSensorBase):
     """Sensor for remaining time."""
     _attr_name = "Tempo Restante"
-    _attr_unique_id = "remaining_time"
+    _attr_icon = "mdi:timer-sand"
 
     @property
     def native_value(self):
@@ -101,7 +105,7 @@ class ElegooTimeSensor(ElegooSensorBase):
 class ElegooFinishTimeSensor(ElegooSensorBase):
     """Sensor for estimated finish time."""
     _attr_name = "Previsão de Término"
-    _attr_unique_id = "finish_time"
+    _attr_icon = "mdi:clock-check"
 
     @property
     def native_value(self):
