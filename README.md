@@ -4,7 +4,7 @@
 
 # Elegoo Saturn 3 Ultra - Home Assistant Integration
 
-Integração nativa para o **Home Assistant** que permite monitorar e controlar sua impressora de resina **Elegoo Saturn 3 Ultra** diretamente no seu dashboard.
+Integração para o **Home Assistant** que permite monitorar e controlar sua impressora de resina **Elegoo Saturn 3 Ultra** diretamente no seu dashboard.
 
 ## 🚀 Funcionalidades
 
